@@ -36,7 +36,7 @@
  *        GND      |       Anode
  *        GPIO32   |       Red pin via resistor
  *        GPIO33   |       Green pin via resistor
- *        GPIO33   |       Blue pin via resistor
+ *        GPIO25   |       Blue pin via resistor
  *     
  *  It is possible to use any other PWM-capable GPIO.
  *  

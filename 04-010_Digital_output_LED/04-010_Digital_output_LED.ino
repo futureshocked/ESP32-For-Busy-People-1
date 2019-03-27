@@ -29,7 +29,7 @@
  *  ESP32 Dev Kit |     LED
  *  ------------------------------
  *        GND      |       Cathode
- *        GPIO33   |       Anode via resistor
+ *        GPIO32   |       Anode via resistor
  *     
  *  It is possible to use any other GPIO that can be configured as an output.
  *  This excludes GPIO 34, 35, 36, 37, 38, 39.
