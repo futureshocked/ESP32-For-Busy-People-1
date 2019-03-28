@@ -36,6 +36,7 @@
  *  -----------------
  *  
  *  1. ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+ *  2. What is a Hall effect sensor? https://en.wikipedia.org/wiki/Hall_effect_sensor
  *  
  *  Created on March 26 2019 by Peter Dalmaris
  * 
