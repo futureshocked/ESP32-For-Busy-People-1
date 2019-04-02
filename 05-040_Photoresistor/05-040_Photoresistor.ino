@@ -51,7 +51,7 @@ const byte PHOTO_GPIO = 39;
 
 void setup() {  
   Serial.begin(115200);
-//  analogSetWidth(9);  // Default resolution is 12 bits. Choose between 9-12.
+  analogSetWidth(9);  // Default resolution is 12 bits. Choose between 9-12.
 }
 
 void loop() {

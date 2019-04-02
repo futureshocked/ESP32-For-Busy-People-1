@@ -66,7 +66,7 @@ void setup()
   Serial.begin(115200);
   delay(1000); // give me time to bring up serial monitor
   Serial.println("ESP32 Touch Test with interrupt");
-  touchAttachInterrupt(T4, gotTouch, threshold); // Attach the interrupt pin T0 to the service routine
+  touchAttachInterrupt(T4, gotTouch, threshold); // Attach the interrupt pin T4 to the service routine
 }
 
 void loop()

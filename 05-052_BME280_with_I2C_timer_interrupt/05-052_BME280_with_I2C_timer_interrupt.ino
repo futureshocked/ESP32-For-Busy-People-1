@@ -148,6 +148,7 @@ void setup() {
 
 void loop() {
   if (interruptCounter > 0) {
+    
     portENTER_CRITICAL(&timerMux);
     interruptCounter--;
     portEXIT_CRITICAL(&timerMux);

@@ -37,7 +37,7 @@
  *  
  *  1. ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
  *  2. What is a Hall effect sensor? https://en.wikipedia.org/wiki/Hall_effect_sensor
- *  
+ *  3. Source for esp32-hal-adc.h where hallRead is defined: https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-adc.h
  *  Created on March 26 2019 by Peter Dalmaris
  * 
  */
@@ -47,6 +47,7 @@
 //Brian Degger / @sctv  
 
 int val = 0;
+
 void setup() {
   Serial.begin(9600);
     }
