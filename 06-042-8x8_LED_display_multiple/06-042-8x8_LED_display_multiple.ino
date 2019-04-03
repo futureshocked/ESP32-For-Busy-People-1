@@ -165,7 +165,7 @@ matrix.write(); // Send bitmap to display
 void loop() {
 
 //animate_pixel();  //Animate a single pixel
-animate_letter();   //Animate a character
+//animate_letter();   //Animate a character
 }
 
 void animate_letter(){
