@@ -34,15 +34,15 @@
     Power is provided from the 5V pin to accomodate the requirements
     of the LCD. It is safe to use 5V with the DS3231 as long as it
     contains a voltage regulator.
-    
-      ESP32        |     DS3231 RTC
-    -------------------------
-      5V           |     Vcc
-      GND          |     GND
-      GPIO21 (SDA) |     SDA
-      GPIO22 (SCL) |     SCL
-      -            |     SQW
-      -            |     32K
+
+      ESP32        |     DS3231 RTC   |   I2C LCD
+    -------------------------------------------
+      5V           |     Vcc          |   Vcc
+      GND          |     GND          |   GND
+      GPIO21 (SDA) |     SDA          |   SDA
+      GPIO22 (SCL) |     SCL          |   SCL
+      -            |     SQW          |
+      -            |     32K          |
 
     Other information
     -----------------
@@ -60,6 +60,7 @@
 /* for normal hardware wire use below */
 #include <Wire.h> // must be included here so that Arduino library object file references work
 #include <RtcDS3231.h>
+
 RtcDS3231<TwoWire> Rtc(Wire);
 
 #include <LiquidCrystal_I2C.h>
@@ -71,7 +72,7 @@ void setup ()
 
   lcd.init();
   lcd.backlight();
-  
+
   Serial.print("compiled: ");
   Serial.print(__DATE__);
   Serial.println(__TIME__);
@@ -137,23 +138,6 @@ void setup ()
 
 void loop ()
 {
-  if (!Rtc.IsDateTimeValid())
-  {
-    if (Rtc.LastError() != 0)
-    {
-      // we have a communications error
-      // see https://www.arduino.cc/en/Reference/WireEndTransmission for
-      // what the number means
-      Serial.print("RTC communications error = ");
-      Serial.println(Rtc.LastError());
-    }
-    else
-    {
-      // Common Cuases:
-      //    1) the battery on the device is low or even missing and the power line was disconnected
-      Serial.println("RTC lost confidence in the DateTime!");
-    }
-  }
 
   RtcDateTime now = Rtc.GetDateTime();
   printDateTime(now);
@@ -161,9 +145,9 @@ void loop ()
   Serial.println();
 
   RtcTemperature temp = Rtc.GetTemperature();
-//  temp.Print(Serial);
-//   you may also get the temperature as a float and print it
-   Serial.print(temp.AsFloatDegC());
+  //  temp.Print(Serial);
+  //   you may also get the temperature as a float and print it
+  Serial.print(temp.AsFloatDegC());
   Serial.println("C");
 
   delay(10000); // ten seconds
@@ -191,7 +175,7 @@ void updateLCD(const RtcDateTime& dt, RtcTemperature temp)
              dt.Hour(),
              dt.Minute(),
              dt.Second() );
-             
+
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print(datestring);
@@ -215,6 +199,6 @@ void printDateTime(const RtcDateTime& dt)
              dt.Hour(),
              dt.Minute(),
              dt.Second() );
-             
+
   Serial.print(datestring);
 }

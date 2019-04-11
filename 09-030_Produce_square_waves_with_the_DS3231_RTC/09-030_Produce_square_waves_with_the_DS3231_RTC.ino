@@ -66,15 +66,6 @@ RtcDS3231<TwoWire> Rtc(Wire);
 void setup () 
 {
     Serial.begin(57600);
-
-    Serial.print("compiled: ");
-    Serial.print(__DATE__);
-    Serial.println(__TIME__);
-
-    //--------RTC SETUP ------------
-    // if you are using ESP-01 then uncomment the line below to reset the pins to
-    // the available pins for SDA, SCL
-    // Wire.begin(0, 2); // due to limited pins, use pin 0 and 2 for SDA, SCL
     
     Rtc.Begin();
 
@@ -86,13 +77,13 @@ void setup ()
 
     // never assume the Rtc was last configured by you, so
     // just clear them to your needed state
-    Rtc.Enable32kHzPin(false);
-//    Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeNone); 
-    Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeClock); 
+    Rtc.Enable32kHzPin(true);
+ //   Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeNone); 
+   Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeClock); 
 
     // See https://github.com/Makuna/Rtc/blob/master/src/RtcDS3231.h
     // for available frequencies
-    Rtc.SetSquareWavePinClockFrequency(DS3231SquareWaveClock_1Hz); 
+    Rtc.SetSquareWavePinClockFrequency(DS3231SquareWaveClock_8kHz); 
     delay(2000);    
 }
 

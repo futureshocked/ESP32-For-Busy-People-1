@@ -105,7 +105,7 @@ void setup() {
 
 void loop() { 
     printValues();
-    delay(delayTime);  // Blocking!!!
+    delay(delayTime);  // Blocking!!! 
 }
 
 

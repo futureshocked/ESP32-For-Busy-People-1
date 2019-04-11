@@ -45,7 +45,11 @@
 
     1. ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
     2. Rtc library (contains libraries for various RTCs): https://github.com/Makuna/Rtc
-
+    3. Rtc library wiki: https://github.com/Makuna/Rtc/wiki
+    4. DS3231 datasheet: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
+    5. Printf format parameters: http://www.cplusplus.com/reference/cstdio/printf/
+    6. snprintf (very similar to snprintf_P): http://www.cplusplus.com/reference/cstdio/snprintf/?kw=snprintf
+    7. snprintf_P: https://www.microchip.com/webdoc/AVRLibcReferenceManual/group__avr__stdio_1ga53ff61856759709eeceae10aaa10a0a3.html
 
     Created on April 3 2019 by Peter Dalmaris
 
@@ -69,6 +73,7 @@ void setup ()
   Rtc.Begin();
 
   RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
+  Serial.print("Compiled: ");
   printDateTime(compiled);
   Serial.println();
 
@@ -127,24 +132,6 @@ void setup ()
 
 void loop ()
 {
-  if (!Rtc.IsDateTimeValid())
-  {
-    if (Rtc.LastError() != 0)
-    {
-      // we have a communications error
-      // see https://www.arduino.cc/en/Reference/WireEndTransmission for
-      // what the number means
-      Serial.print("RTC communications error = ");
-      Serial.println(Rtc.LastError());
-    }
-    else
-    {
-      // Common Cuases:
-      //    1) the battery on the device is low or even missing and the power line was disconnected
-      Serial.println("RTC lost confidence in the DateTime!");
-    }
-  }
-
   RtcDateTime now = Rtc.GetDateTime();
   printDateTime(now);
   Serial.println();

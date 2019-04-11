@@ -17,6 +17,8 @@
    ----------
     - ESP32 Dev Kit v4
     - DS2331 RTC breakout
+    - 16x2 LCD with I2C backpack
+    - Breadboard and jumper wires
 
     IDE
     ---
@@ -28,6 +30,7 @@
     ---------
     - RtcDS3231
     - Wire
+    - LiquidCrystal_I2C
 
    Connections
    -----------
@@ -38,11 +41,11 @@
 
       ESP32        |     DS3231 RTC
     -------------------------
-      5V         |     Vcc
+      5V           |     Vcc
       GND          |     GND
       GPIO21 (SDA) |     SDA
       GPIO22 (SCL) |     SCL
-      -            |     SQW
+      GPIO0        |     SQW 
       -            |     32K
 
     Other information
@@ -53,6 +56,7 @@
     3. Printf format parameters: http://www.cplusplus.com/reference/cstdio/printf/
     4. snprintf (very similar to snprintf_P): http://www.cplusplus.com/reference/cstdio/snprintf/?kw=snprintf
     5. snprintf_P: https://www.microchip.com/webdoc/AVRLibcReferenceManual/group__avr__stdio_1ga53ff61856759709eeceae10aaa10a0a3.html
+    6. LiquidCrystal_I2C library: https://github.com/johnrickman/LiquidCrystal_I2C
 
     Created on April 3 2019 by Peter Dalmaris
 
@@ -144,7 +148,7 @@ void setup ()
   // never assume the Rtc was last configured by you, so
   // just clear them to your needed state
   Rtc.Enable32kHzPin(false);
-  Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeClock); 
+  Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeClock);
   Rtc.SetSquareWavePinClockFrequency(DS3231SquareWaveClock_1Hz); // Set the square wave to 1 sec period
 
   pinMode(interruptPin, INPUT_PULLUP);
@@ -160,7 +164,7 @@ void loop ()
     portENTER_CRITICAL_ISR(&mux);
     seconds = 0;  // Reset seconds and prepare for the next second
     portEXIT_CRITICAL_ISR(&mux);
-    
+
     if (!Rtc.IsDateTimeValid())
     {
       if (Rtc.LastError() != 0)
@@ -181,7 +185,7 @@ void loop ()
 
     RtcDateTime now = Rtc.GetDateTime();
     printDateTime(now);
-    updateLCD(now, Rtc.GetTemperature());   
+    updateLCD(now, Rtc.GetTemperature());
   }
 
 
