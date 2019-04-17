@@ -1,4 +1,4 @@
-/*  08.030 - Reading and writting from the SPIFS
+/*  08.030 - Reading and writting from the SPIFFS
  * 
  * This sketch demonstrates how to read, write and append text to files stored in
  * the SPIFS of an ESP32.
@@ -28,7 +28,7 @@
  *  Libraries
  *  ---------
  *  - FS
- *  - SPIFS
+ *  - SPIFFS
  *
  * Connections
  * -----------
@@ -39,7 +39,7 @@
  *  
  *  1. ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
  *  2. FS library: https://github.com/espressif/arduino-esp32/tree/master/libraries/FS
- *  3. SPIFS library: https://github.com/espressif/arduino-esp32/tree/master/libraries/SPIFFS
+ *  3. SPIFFS library: https://github.com/espressif/arduino-esp32/tree/master/libraries/SPIFFS
  *  4. ESP32 sketch data upload tool: https://github.com/me-no-dev/arduino-esp32fs-plugin/releases/
  *  5. ESP32 FS tool (useful for many things, including erasing flash memory): https://github.com/espressif/esptool
  *  
