@@ -1,15 +1,15 @@
 /*  08.030 - Reading and writting from the SPIFFS
  * 
  * This sketch demonstrates how to read, write and append text to files stored in
- * the SPIFS of an ESP32.
+ * the SPIFFS of an ESP32.
  * 
  * Before running the sketch, create a text file with the file name readme.txt and 
  * any text content you like (keep it small!). Go in the sketch directory and create 
  * a new folder named "data". Store the text file in the data directory. Use the 
- * SPIFS uploaded tool from the Arduino IDE to upload the file to the SPIFS. Then run
+ * SPIFFS uploaded tool from the Arduino IDE to upload the file to the SPIFFS. Then run
  * the sketch. 
  * 
- * The sketch will demonstrate the 3 basic functionalities for the SPIFS library.
+ * The sketch will demonstrate the 3 basic functionalities for the SPIFFS library.
  * 
  * This sketch was written by Peter Dalmaris using information from the 
  * ESP32 datasheet and examples.

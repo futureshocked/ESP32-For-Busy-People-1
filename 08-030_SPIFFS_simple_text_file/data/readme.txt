@@ -1,1 +1,1 @@
-Hello from SPIFS!
+Hello from SPIFFS!
