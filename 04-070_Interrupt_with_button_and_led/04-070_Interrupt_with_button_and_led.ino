@@ -71,8 +71,8 @@ void IRAM_ATTR handleInterrupt() {
   portENTER_CRITICAL_ISR(&mux);
    if((long)(micros() - last_micros) >= debouncing_time * 1000) {
     interruptCounter++;
-    last_micros = micros();
   }
+  last_micros = micros();
   portEXIT_CRITICAL_ISR(&mux);
 }
  
