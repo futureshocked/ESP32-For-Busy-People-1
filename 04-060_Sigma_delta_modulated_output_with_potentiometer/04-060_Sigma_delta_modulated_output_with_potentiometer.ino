@@ -56,9 +56,9 @@ const byte LED_GPIO = 32;
 void setup()
 {
     //setup channel 0 with frequency 312500 Hz
-    sigmaDeltaSetup(0, 312500);
+    sigmaDeltaSetup(LED_GPIO, 0, 312500);
     //attach pin 32 to channel 0
-    sigmaDeltaAttachPin(LED_GPIO,0);
+    //sigmaDeltaAttachPin(LED_GPIO,0);  // No longer used in newer versions of the Espressif libraries
     //initialize channel 0 to off
     sigmaDeltaWrite(0, 0);
 }
