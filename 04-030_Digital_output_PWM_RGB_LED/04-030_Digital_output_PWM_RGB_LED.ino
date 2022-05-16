@@ -68,8 +68,6 @@ uint8_t ledR = A4;  // GPIO32
 uint8_t ledG = A5;  // GPIO33
 uint8_t ledB = A18; // GPIO25
 
-uint8_t ledArray[3] = {1, 2, 3}; // three led channels
-
 const boolean invert = true; // set true if common anode, false if common cathode
 
 uint8_t color = 0;          // a value from 0 to 255 representing the hue
