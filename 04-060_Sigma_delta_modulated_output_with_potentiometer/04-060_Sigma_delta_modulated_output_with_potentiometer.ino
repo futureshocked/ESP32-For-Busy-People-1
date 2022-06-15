@@ -51,7 +51,7 @@
  */
 
 const byte POT_GPIO = 36;
-const byte LED_GPIO = 32;
+const byte LED_GPIO = 25;
 
 void setup()
 {
