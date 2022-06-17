@@ -59,7 +59,7 @@ void setup() {
   // initialize the serial communications:
   Serial.begin(9600);
 
-  analogSetWidth(9);  // Default resolution is 12 bits. Choose between 9-12.
+  analogReadResolution(9);  // Default resolution is 12 bits. Choose between 9-12.
                       // 9-bit resolution will produce readings from 0 to 512
 }
 
