@@ -44,7 +44,7 @@
  *        GND      |    Cathode
  *        GPIO32   |    Anode via resistor
  *        
- *  Connect pin 1 of the button to ESP32 GPIO 25.
+ *  Connect pin 1 of the button to ESP32 GPIO 36. (Originally used GPIO 25 - changed to reused schematic from lecture 04.040).
  *  Connect pin 2 of the button to ESP32 GND.
  *     
  *  It is possible to use any other GPIO that can be configured as an output.
@@ -74,7 +74,7 @@ int addr = 0;          // We'll store the state of the LED in the first EEPROM b
 const byte LED_GPIO = 32;  // Marked volatile so it can be read inside the ISR
 bool led_state = false;  // Keep track of the state of the LED
 
-const byte interruptPin = 25;
+const byte interruptPin = 36; //Originally used GPIO 25
 volatile int interruptCounter = 0;
 int numberOfInterrupts = 0;
 
