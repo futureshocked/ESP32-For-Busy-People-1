@@ -27,6 +27,7 @@
  * More information:
  *
  * 1. Library: https://github.com/RoboticsBrno/ESP32-Arduino-Servo-Library
+ * Please use version 1.0.3 of this library. Tested to work with Arduino IDE v2.2.1.
  *  
  *  Created on April 1 2019 by Peter Dalmaris
  * 
