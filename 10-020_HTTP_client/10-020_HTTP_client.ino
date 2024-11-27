@@ -43,8 +43,8 @@
 
 #include <WiFi.h>
 
-const char* ssid     = "ardwifi";     // change this for your own network
-const char* password = "ardwifi987";  // change this for your own network
+const char* ssid     = "Your_ssid";     // change this for your own network
+const char* password = "Your_password";  // change this for your own network
 
 const char* host = "txplore-downloads.s3.amazonaws.com";  // Change this for your own server
 String url = "/esp32/test_file.txt";                      // Change this for your own file
