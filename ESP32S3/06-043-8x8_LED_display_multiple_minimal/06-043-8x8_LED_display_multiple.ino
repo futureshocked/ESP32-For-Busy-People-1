@@ -20,8 +20,8 @@
  * 
  *     ESP32-S3          LED Matrix Chain
  *     ┌─────────┐       ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐
- *     │      3V3├───────┤VCC  │ │VCC  │ │VCC  │ │VCC  │
- *     │      GND├───────┤GND  │ │GND  │ │GND  │ │GND  │
+ *     │      3V3├───────┤VCC  │─│VCC  │─│VCC  │─│VCC  │
+ *     │      GND├───────┤GND  │─│GND  │─│GND  │─│GND  │
  *     │  GPIO11 ├───────┤DIN  ├─┤DIN  ├─┤DIN  ├─┤DIN  │
  *     │  GPIO12 ├───────┤CLK  ├─┤CLK  ├─┤CLK  ├─┤CLK  │
  *     │  GPIO10 ├───────┤CS   ├─┤CS   ├─┤CS   ├─┤CS   │
