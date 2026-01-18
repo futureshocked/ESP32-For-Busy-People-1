@@ -1,6 +1,7 @@
 # ESP32 For Busy People – Course Repository
 
-Welcome to the **<a href="https://techexplorations.com/so/esp32fbpev/" target="_blank">ESP32 For Busy People</a>** course repository! This repository contains all the code and resources you need to get started with ESP32 development, organized for clarity and ease of use.
+Welcome to the **<a href="https://techexplorations.com/so/esp32fbpev/" target="_blank">ESP32 For Busy People</a>** course repository. 
+This repository contains all the code and resources you need to get started with ESP32 development, organized for clarity and ease of use.
 
 ## Repository Structure
 
